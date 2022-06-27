@@ -3,7 +3,7 @@ const range = document.getElementById("range");
 const rangeLabel = document.getElementById("label");
 const subContainer = document.createElement("div");
 const element = document.createElement("div");
-
+const clear = document.getElementById("clear");
 const COLOR_BLACK = "black";
 
 rangeLabel.textContent = `${range.value}x${range.value}`;
@@ -19,6 +19,12 @@ createGrid(range.value);
 let idElements = document.querySelectorAll("#element");
 gridHover();
 changeGrid();
+
+clear.addEventListener("click", () => {
+  idElements.forEach((item) => {
+    item.style.backgroundColor = "black";
+  });
+});
 
 function changeGrid() {
   range.addEventListener("mouseup", () => {
@@ -36,6 +42,12 @@ function changeGrid() {
     idElements = document.querySelectorAll("#element");
 
     gridHover();
+  });
+}
+
+function clearGrid() {
+  idElements.forEach((item) => {
+    item.style.backgroundColor = "white";
   });
 }
 
