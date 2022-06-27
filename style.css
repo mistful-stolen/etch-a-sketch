@@ -1,0 +1,25 @@
+div {
+  margin: 0;
+  border: 0;
+}
+
+#container {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-flow: column nowrap;
+  border: black solid 1px;
+}
+
+#container div {
+  display: flex;
+  flex: 1 1 0;
+  flex-flow: row nowrap;
+  border-radius: 1px;
+}
+
+#container div div {
+  flex: 1 1 0;
+  background-color: grey;
+  border: solid 1px black;
+}
