@@ -1,12 +1,21 @@
 const container = document.getElementById("container");
 const range = document.getElementById("range");
+const rangeLabel = document.getElementById("label");
 const subContainer = document.createElement("div");
 const element = document.createElement("div");
+
 const COLOR_BLACK = "black";
+
+rangeLabel.textContent = `${range.value}x${range.value}`;
+
+range.addEventListener("input", () => {
+  rangeLabel.textContent = `${range.value}x${range.value}`;
+});
+
 subContainer.setAttribute("id", "subContainer");
 element.setAttribute("id", "element");
 
-createGrid(4);
+createGrid(range.value);
 let idElements = document.querySelectorAll("#element");
 gridHover();
 changeGrid();
@@ -25,6 +34,7 @@ function changeGrid() {
 
     createGrid(range.value);
     idElements = document.querySelectorAll("#element");
+
     gridHover();
   });
 }
@@ -32,7 +42,7 @@ function changeGrid() {
 function gridHover() {
   idElements.forEach((item) => {
     item.addEventListener("mouseover", () => {
-      item.style.backgroundColor = "black";
+      item.style.backgroundColor = "white";
     });
   });
 }
