@@ -1,6 +1,15 @@
 html {
   background-color: black;
   color: white;
+  font-family: monospace;
+}
+
+body {
+  height: 100vh;
+  margin: 0%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 div {
@@ -16,6 +25,12 @@ div {
   border: white solid 1px;
 }
 
+#center-this {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
 #container div {
   display: flex;
   flex: 1 1 0;
@@ -27,4 +42,35 @@ div {
   flex: 1 1 0;
 
   border: solid 1px grey;
+}
+
+#user-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  column-gap: 50px;
+}
+
+.range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column-reverse;
+}
+
+#clear {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 16px 40px;
+  border-radius: 9999px;
+  font-size: 20px;
+}
+#clear:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#clear:active {
+  background-color: rgba(255, 255, 255, 1);
 }
